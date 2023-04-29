@@ -1,0 +1,92 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Assembly details -->
+  <PropertyGroup>
+    <ProjectGuid>e713f3a1-267a-4c14-8f6c-4474e7cf1673</ProjectGuid>
+
+    <!-- Assembly and projecto details -->
+    <!-- https://docs.microsoft.com/en-us/dotnet/standard/frameworks -->
+    <TargetFrameworks>net7.0;net6.0;net5.0</TargetFrameworks>
+
+
+    <AssemblyName>Test.Nuget.Please.Dont.Use</AssemblyName>
+    <RootNamespace>Test.Nuget.Please.Dont.Use</RootNamespace>
+
+    <Version>1.0.0</Version>
+
+    <PackageOutputPath>bin\</PackageOutputPath>
+  </PropertyGroup>
+
+
+  <!-- Package details -->
+  <PropertyGroup>
+    <CurrentYear>$([System.DateTime]::UtcNow.ToString(yyyy))</CurrentYear>
+
+    <PackageId>Test.Nuget.Please.Dont.Use</PackageId>
+    <title>Test.Nuget.Please.Dont.Use</title>
+    <Product>Test.Nuget.Please.Dont.Use</Product>
+
+    <Authors>Nelson Nobre</Authors>
+    <Company>nelson-tests</Company>
+
+    <License>MIT</License>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Copyright>Copyright © $(CurrentYear) by nelson-tests</Copyright>
+
+    <Description>Test project to create a nuget. Please don't use this project</Description>
+    <Summary>Test project to create a nuget. Please don't use this project</Summary>
+    <PackageTags>TestNuget;NuGet;PleaseDontUse</PackageTags>
+    <PackageProjectUrl>https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use</PackageProjectUrl>
+    <NeutralLanguage>en-GB</NeutralLanguage>
+
+    <PackageIcon>logo_128x128.png</PackageIcon>
+    <PackageReadmeFile>README.nuget.org.md</PackageReadmeFile>
+
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use</RepositoryUrl>
+  </PropertyGroup>
+
+
+  <!-- Source link -->
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols Condition=" '$(DebugType)' != 'embedded' ">true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+
+  <!-- DOCUMENTATION -->
+  <PropertyGroup>
+    <DocumentationFile>bin\Test.Nuget.Please.Dont.Use.xml</DocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <!-- Prevent XML documentation warnings -->
+  </PropertyGroup>
+
+  <!-- Tests -->
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>$(AssemblyName).Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+
+  <ItemGroup Condition="'$(Configuration)'=='Release'">
+    <None Include="..\assets\logo\logo_128x128.png" Pack="true" PackagePath="" />
+    <None Include="..\LICENSE" Pack="true" PackagePath="" />
+    <None Include="..\README.nuget.org.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+
+</Project>
