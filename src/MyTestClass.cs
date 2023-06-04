@@ -4,5 +4,6 @@
     {
         public static string MyTestMethod(int year)
             => $"Hello World. Year: {year}";
+
     }
 }
