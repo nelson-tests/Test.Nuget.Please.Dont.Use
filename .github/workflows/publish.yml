@@ -53,8 +53,8 @@ jobs:
 
     - name: "New version"
       run: |
-        echo "Published new version ${{ steps.semantic-release.outputs.new_release_published }}"
-        echo "New version ${{ steps.semantic-release.outputs.new_release_version }}"
+        echo "Published new version: ${{ steps.semantic-release.outputs.new_release_published }}"
+        echo "New version: ${{ steps.semantic-release.outputs.new_release_version }}"
 
     - name: "Restore dependencies"
       if: ${{ steps.semantic-release.outputs.new_release_published == 'true' }}
