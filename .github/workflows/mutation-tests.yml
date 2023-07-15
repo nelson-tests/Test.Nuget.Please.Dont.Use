@@ -19,6 +19,7 @@ on:
 
 env:
   SDK_VERSION: '7.0.302'
+  FRAMEWORK_VERSION: 'net7.0'
 
   GIT_ORGANIZATION: 'nelson-tests'
   PROJECT_NAME: 'Test.Nuget.Please.Dont.Use'
@@ -43,6 +44,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ env.SDK_VERSION }}
+
+    # Hack because the last version of the `xunit.runner.visualstudio` doesn't generate the report for some OLD SDK versions like .net 5
+    - name: "Replace TargetFrameworks"
+      run: sed -i 's/<TargetFrameworks>.*<\/TargetFrameworks>/<TargetFrameworks>${{ env.FRAMEWORK_VERSION }}<\/TargetFrameworks>/g' ${{ env.TEST_PROJECT_PATH }}
 
     - name: "Restore .NET Tools"
       run: dotnet tool restore
