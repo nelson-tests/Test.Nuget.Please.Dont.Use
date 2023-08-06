@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.1.0...v1.2.0) (2023-08-06)
+
+
+### Features
+
+* WeTestMethod ([bbad185](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/bbad185b42e57a447235612b3d1a45e34d56abdd))
+
 # [1.1.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.0.2...v1.1.0) (2023-08-06)
 
 
