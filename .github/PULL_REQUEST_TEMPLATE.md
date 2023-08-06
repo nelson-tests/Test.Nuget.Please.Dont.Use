@@ -1,6 +1,14 @@
-## Describe your changes
+## Description
+copilot:summary
 
-## Issue number or link
+
+## Related Issue
+<!--- Please link to the issue here: -->
+
+
+## Explanation of Changes
+opilot:walkthrough
+
 
 ## Checklist before requesting a review
 - [ ] I have performed a self-review of my code.
