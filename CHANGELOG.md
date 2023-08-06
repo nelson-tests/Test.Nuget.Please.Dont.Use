@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.0.2...v1.1.0) (2023-08-06)
+
+
+### Features
+
+* new method `YourTestMethod` ([d6faa4e](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/d6faa4e96186c180f194613480008dfd5565aabc))
+
 ## [1.0.2](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.0.1...v1.0.2) (2023-06-04)
 
 
