@@ -7,7 +7,7 @@ copilot:summary
 
 
 ## Explanation of Changes
-opilot:walkthrough
+copilot:walkthrough
 
 
 ## Checklist before requesting a review
