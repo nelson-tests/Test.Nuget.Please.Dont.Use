@@ -16,5 +16,16 @@ namespace Test.Nuget.Please.Dont.Use.Tests
             // Assert
             act.Should().StartWith("Hello World. Year: ");
         }
+
+        [Fact]
+        public void Test2()
+        {
+            // Arrange && Act
+            var act = MyTestClass.Sum(2,5);
+
+
+            // Assert
+            act.Should().Be(7);
+        }
     }
 }
