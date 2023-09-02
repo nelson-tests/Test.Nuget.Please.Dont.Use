@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.2.0...v1.3.0) (2023-09-02)
+
+
+### Features
+
+* Added Sum method ([6ef4951](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/6ef4951a1db23f72f1640e560fcbf2878ecc6b63))
+
 # [1.2.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.1.0...v1.2.0) (2023-08-06)
 
 
