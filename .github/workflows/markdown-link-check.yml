@@ -4,14 +4,10 @@ name: 'Check Markdown links'
 on:
   workflow_dispatch: # To can dispatch manually
 
-  push:
-    paths:
-      - '**.md'
-
   pull_request:
     types: [opened, reopened, edited, synchronize]
-    paths:
-      - '**.md'
+    branches:
+      - main
 
 
 jobs:
