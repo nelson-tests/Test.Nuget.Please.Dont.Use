@@ -24,3 +24,4 @@ jobs:
         use-quiet-mode: 'yes'
         use-verbose-mode: 'yes'
         base-branch: 'main'
+        config-file: '.github/workflows/markdown-link-check.json'
