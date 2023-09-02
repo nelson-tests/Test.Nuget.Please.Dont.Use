@@ -52,6 +52,7 @@ dotnet add package Test.Nuget.Please.Dont.Use
 
 ### Demo topic <a name="doc-demo-topic"></a>
 Loren .......
+[More details](https://localhost:5001/test/demo)
 
 
 
