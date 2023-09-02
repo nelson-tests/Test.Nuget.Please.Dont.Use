@@ -6,5 +6,7 @@
         public static string YourTestMethod(string name) => $"Hello {name}.";
         public static string Welcome() => $"Welcome";
         public static string WeTestMethod(string we) => $"We are {we}.";
+
+        public static int Sum(int a, int b) => a + b;
     }
 }
