@@ -8,5 +8,7 @@
         public static string WeTestMethod(string we) => $"We are {we}.";
 
         public static int Sum(int a, int b) => a + b;
+
+        public static int Sub(int a, int b) => a - b;
     }
 }
