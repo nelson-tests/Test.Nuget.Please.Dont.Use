@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.3.0...v1.4.0) (2023-11-16)
+
+
+### Features
+
+* Added method `Sub` ([fb0b553](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/fb0b553911d1334c4084b5d6eabb4cea2d18ca32))
+
 # [1.3.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.2.0...v1.3.0) (2023-09-02)
 
 
