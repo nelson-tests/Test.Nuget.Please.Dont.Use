@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.5.0...v1.6.0) (2023-11-18)
+
+
+### Features
+
+* Added method div ([dcaff8d](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/dcaff8d20788607ae30e890991beb65fb160f797))
+
 # [1.5.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.4.0...v1.5.0) (2023-11-18)
 
 
