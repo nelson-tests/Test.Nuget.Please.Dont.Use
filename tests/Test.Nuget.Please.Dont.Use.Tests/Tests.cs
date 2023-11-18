@@ -49,5 +49,16 @@ namespace Test.Nuget.Please.Dont.Use.Tests
             // Assert
             act.Should().Be(10);
         }
+
+        [Fact]
+        public void Test5()
+        {
+            // Arrange && Act
+            var act = MyTestClass.Div(10,5);
+
+
+            // Assert
+            act.Should().Be(2);
+        }
     }
 }
