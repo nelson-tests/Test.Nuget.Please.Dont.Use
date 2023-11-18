@@ -38,5 +38,16 @@ namespace Test.Nuget.Please.Dont.Use.Tests
             // Assert
             act.Should().Be(-3);
         }
+
+        [Fact]
+        public void Test4()
+        {
+            // Arrange && Act
+            var act = MyTestClass.Mult(2,5);
+
+
+            // Assert
+            act.Should().Be(10);
+        }
     }
 }
