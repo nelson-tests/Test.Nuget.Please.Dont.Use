@@ -17,17 +17,16 @@
 [![License: MIT](https://img.shields.io/github/license/nelson-tests/Test.Nuget.Please.Dont.Use.svg)](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/blob/main/LICENSE)
 
 
-- [Support](#support-to)
-- [How to use](#how-to-use)
-  - [Install NuGet package](#Installation)
-  - [Demo topic](#doc-demo-topic)
-- [Contribution](#contribution)
-- [License](./LICENSE)
-- [Changelog](./CHANGELOG.md)
+- [Support to ](#support-to-)
+- [How to use ](#how-to-use-)
+  - [Install NuGet package ](#install-nuget-package-)
+  - [Demo topic ](#demo-topic-)
+- [Contribution ](#contribution-)
 
 
 
 ## Support to <a name="support-to"></a>
+- .NET 8.0
 - .NET 7.0
 - .NET 6.0
 - .NET 5.0
