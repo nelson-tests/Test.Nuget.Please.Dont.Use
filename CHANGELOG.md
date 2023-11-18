@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.4.0...v1.5.0) (2023-11-18)
+
+
+### Features
+
+* Added support to .NET8 ([1142c89](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/1142c89818d9f268427827a94ad2afd9649d7619))
+
 # [1.4.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.3.0...v1.4.0) (2023-11-16)
 
 
