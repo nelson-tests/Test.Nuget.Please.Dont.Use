@@ -29,6 +29,17 @@ namespace Test.Nuget.Please.Dont.Use.Tests
         }
 
         [Fact]
+        public void Test2_3()
+        {
+            // Arrange && Act
+            var act = MyTestClass.Sum(2, 5, 4);
+
+
+            // Assert
+            act.Should().Be(11);
+        }
+
+        [Fact]
         public void Test3()
         {
             // Arrange && Act
