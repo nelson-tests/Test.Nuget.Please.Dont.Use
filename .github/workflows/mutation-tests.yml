@@ -73,6 +73,11 @@ jobs:
       run: |
         echo "Branch name is ${{ steps.branch-name.outputs.current_branch }}"
 
+    - name: "Display branch details New version"
+      if: github.event_name == 'pull_request'
+      run: |
+        echo "Branch name is ${{ github.head_ref }}"
+
     - name: "Test for PR"
       if: github.event_name == 'pull_request'
       run: dotnet stryker -tp ${{ env.TEST_PROJECT_PATH }} --reporter markdown --reporter progress --reporter dashboard --dashboard-api-key ${{ secrets.STRYKER_API_KEY }} --version ${{ steps.branch-name.outputs.current_branch }}-${{ github.run_number }}
