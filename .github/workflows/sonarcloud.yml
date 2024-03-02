@@ -44,9 +44,6 @@ jobs:
     - name: "Create cache directory"
       run: mkdir -p ~/sonar/cache
 
-    - name: "List directories for debug"
-      run: ls -la ~/sonar/cache
-
     - name: "Cache SonarCloud packages"
       uses: actions/cache@v4
       with:
