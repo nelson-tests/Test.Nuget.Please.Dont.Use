@@ -45,7 +45,9 @@ jobs:
       with:
         dotnet-version: ${{ env.SDK_VERSION }}
 
-    # Hack because the last version of the `xunit.runner.visualstudio` doesn't generate the report for some OLD SDK versions like .net 5
+    # Hack reasons:
+    #   - The last version of the `xunit.runner.visualstudio` doesn't generate the report for some OLD SDK versions like .net 5
+    #   - The Stryker versions after 4.0.0 is not compatible with net7.0
     - name: "Replace TargetFrameworks"
       run: |
         find . -type f -name "*.csproj" -exec sed -i 's/<TargetFrameworks>.*<\/TargetFrameworks>/<TargetFrameworks>${{ env.FRAMEWORK_VERSION }}<\/TargetFrameworks>/g' {} +
