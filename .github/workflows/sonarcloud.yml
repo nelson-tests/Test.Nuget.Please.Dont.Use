@@ -41,6 +41,9 @@ jobs:
       with:
         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
+    - name: "Create cache directory"
+      run: mkdir -p ~/sonar/cache
+
     - name: "List directories for debug"
       run: ls -la ~/sonar/cache
 
