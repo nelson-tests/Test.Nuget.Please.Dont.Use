@@ -1,0 +1,30 @@
+name: 'Demo .NET'
+
+
+on:
+  workflow_dispatch: # To can dispatch manually
+
+jobs:
+
+  demo-job:
+    name: "Demo Job"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: "Checkout"
+      uses: actions/checkout@v4
+
+    - name: "1 - List installed .NET SDKs"
+      run: dotnet --list-sdks
+
+    - name: "1 - List installed .NET Runtimes"
+      run: dotnet --list-runtimes
+
+    - name: "Setup .NET"
+      uses: actions/setup-dotnet@v4
+
+    - name: "2 - List installed .NET SDKs"
+      run: dotnet --list-sdks
+
+    - name: "2 - List installed .NET Runtimes"
+      run: dotnet --list-runtimes
