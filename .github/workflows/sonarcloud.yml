@@ -70,14 +70,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      shell: pwsh
       run: |
-        echo "******** 1 ***********"
         ./.sonar/scanner/dotnet-sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_KEY }}" /o:"${{ secrets.SONAR_ORGANIZATION }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml /d:sonar.projectBaseDir="$(pwd)"
-        echo "******** 2 ***********"
         dotnet build -c Release --no-incremental
-        echo "******** 3 ***********"
         ./.sonar/scanner/dotnet-coverage collect "dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -c Release --no-restore --no-build" -f xml -o coverage.xml
-        echo "******** 4 ***********"
         ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-        echo "******** 5 ***********"
