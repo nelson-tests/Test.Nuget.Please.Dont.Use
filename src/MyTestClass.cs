@@ -15,6 +15,4 @@
         public static int Mult(int a, int b) => a * b;
         public static int Div(int a, int b) => a / b;
     }
-
-
 }
