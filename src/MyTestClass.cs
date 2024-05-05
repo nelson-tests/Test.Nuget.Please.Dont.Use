@@ -1,4 +1,6 @@
-﻿namespace Test.Nuget.Please.Dont.Use
+﻿using System;
+
+namespace Test.Nuget.Please.Dont.Use
 {
     public static class MyTestClass
     {
@@ -14,7 +16,8 @@
 
         public static int Mult(int a, int b) => a * b;
         public static int Div(int a, int b) => a / b;
-    }
 
+        public static double Pow(double a, double b) => Math.Pow(a, b);
+    }
 
 }
