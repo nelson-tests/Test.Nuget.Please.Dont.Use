@@ -77,7 +77,7 @@ jobs:
         echo "******** 2 ***********"
         dotnet build -c Release --no-incremental
         echo "******** 3 ***********"
-        ./.sonar/scanner/dotnet-coverage collect "dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover -c Release --no-restore --no-build" -f xml -o "coverage.xml"
+
         echo "******** 4 ***********"
         ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
         echo "******** 5 ***********"
