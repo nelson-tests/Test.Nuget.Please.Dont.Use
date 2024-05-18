@@ -62,7 +62,7 @@ namespace Test.Nuget.Please.Dont.Use.Tests
         }
 
         [Fact]
-        public void Test5()
+        public void Div_Int()
         {
             // Arrange && Act
             var act = MyTestClass.Div(10,5);
@@ -70,6 +70,17 @@ namespace Test.Nuget.Please.Dont.Use.Tests
 
             // Assert
             act.Should().Be(2);
+        }
+
+        [Fact]
+        public void Div_Double()
+        {
+            // Arrange && Act
+            var act = MyTestClass.Div(10.0,5.0);
+
+
+            // Assert
+            act.Should().Be(2.0);
         }
 
         [Fact]
