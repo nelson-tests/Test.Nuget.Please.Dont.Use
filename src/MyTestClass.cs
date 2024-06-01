@@ -16,6 +16,7 @@ namespace Test.Nuget.Please.Dont.Use
 
         public static int Mult(int a, int b) => a * b;
         public static int Div(int a, int b) => a / b;
+        public static double Div(double a, double b) => a / b;
 
         public static double Pow(double a, double b) => Math.Pow(a, b);
     }
