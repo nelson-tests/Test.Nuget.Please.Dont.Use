@@ -46,17 +46,11 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: "Run tests"
-      run: dotnet test --configuration Release --no-build --verbosity normal --results-directory ${{ env.TEST_RESULTS_DIRECTORY }} --logger trx --logger "junit;LogFileName=test-result-$(uuidgen).xml" --logger "console;verbosity=detailed"
+      run: dotnet test --configuration Release --no-build --verbosity normal --results-directory ${{ env.TEST_RESULTS_DIRECTORY }} --logger trx --logger "console;verbosity=detailed"
 
     - name: "Publish test results"
-      uses: test-summary/action@v2
-      if: always()
-      with:
-        paths: "${{ env.TEST_RESULTS_DIRECTORY }}/**/*.xml"
-
-    - name: "Publish test results 2"
       uses: dorny/test-reporter@v1
-      if: always()
+      if: success() || failure()
       with:
         name: "Test Results"
         path: "${{ env.TEST_RESULTS_DIRECTORY }}/**/*.trx"
