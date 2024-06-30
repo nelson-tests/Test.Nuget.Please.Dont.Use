@@ -46,7 +46,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: "Run tests"
-      run: dotnet test --configuration Release --no-build --verbosity normal --results-directory ${{ env.TEST_RESULTS_DIRECTORY }}
+      run: dotnet test --configuration Release --no-build --verbosity normal --results-directory ${{ env.TEST_RESULTS_DIRECTORY }} --collect:"XPlat Code Coverage"
 
     - name: "Combine Coverage Reports" # This is because one report is produced per project, and we want one result for all of them.
       uses: danielpalme/ReportGenerator-GitHub-Action@5.2.4
