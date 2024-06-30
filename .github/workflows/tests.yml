@@ -79,17 +79,31 @@ jobs:
         output: both
         thresholds: "10 30"
 
-    - name: "Add coverage PR comment"
+    - name: "Add Coverage PR Comment"
       uses: marocchino/sticky-pull-request-comment@v2
       if: github.event_name == 'pull_request'
       with:
         recreate: true
         path: code-coverage-results.md
 
-    # - name: "Publish test results"
-    #   uses: dorny/test-reporter@v1
-    #   if: success() || failure()
-    #   with:
-    #     name: "Test Results"
-    #     path: "${{ env.TEST_RESULTS_DIRECTORY }}/**/*.trx"
-    #     reporter: dotnet-trx
+    - name: "Upload Test Results"
+      uses: actions/upload-artifact@v4
+      with:
+        name: 'TestResults'
+        path: ${{ env.TEST_RESULTS_DIRECTORY }}/**/*
+
+    - name: "Publish Test Tesults"
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: "Test Results"
+        path: "${{ env.TEST_RESULTS_DIRECTORY }}/**/*.trx"
+        reporter: dotnet-trx
+
+    - name: "Publish Test Summary"
+      uses: EnricoMi/publish-unit-test-result-action@v2.16.1
+      if: always()
+      with:
+        check_name: "Test Summary"
+        # NOTE: using trx_files instead of files due to https://github.com/EnricoMi/publish-unit-test-result-action/issues/424
+        trx_files: "${{ env.TEST_RESULTS_DIRECTORY }}/**/*.trx"
