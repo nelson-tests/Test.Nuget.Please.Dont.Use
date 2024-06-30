@@ -79,10 +79,10 @@ jobs:
         output: both
         thresholds: "10 30"
 
-    - name: "Publish test results"
-      uses: dorny/test-reporter@v1
-      if: success() || failure()
-      with:
-        name: "Test Results"
-        path: "${{ env.TEST_RESULTS_DIRECTORY }}/**/*.trx"
-        reporter: dotnet-trx
+    # - name: "Publish test results"
+    #   uses: dorny/test-reporter@v1
+    #   if: success() || failure()
+    #   with:
+    #     name: "Test Results"
+    #     path: "${{ env.TEST_RESULTS_DIRECTORY }}/**/*.trx"
+    #     reporter: dotnet-trx
