@@ -79,6 +79,13 @@ jobs:
         output: both
         thresholds: "10 30"
 
+    - name: "Add coverage PR comment"
+      uses: marocchino/sticky-pull-request-comment@v2
+      if: github.event_name == 'pull_request'
+      with:
+        recreate: true
+        path: code-coverage-results.md
+
     # - name: "Publish test results"
     #   uses: dorny/test-reporter@v1
     #   if: success() || failure()
