@@ -19,6 +19,12 @@ env:
   TEST_RESULTS_DIRECTORY: './TestResults'
 
 
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
+
 jobs:
 
   test-project:
