@@ -1,9 +1,9 @@
-﻿namespace Demo
+﻿namespace Test.Nuget.Please.Dont.Use
 {
     public class Calc
     {
-        public int Value1 { get; private init; }
-        public int Value2 { get; private init; }
+        public int Value1 { get; private set; }
+        public int Value2 { get; private set; }
 
 
         public Calc(int value1, int value2)

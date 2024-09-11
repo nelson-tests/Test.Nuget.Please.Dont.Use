@@ -1,8 +1,8 @@
-﻿namespace Demo
+﻿namespace Test.Nuget.Please.Dont.Use
 {
     public class Promo
     {
-        public int Age { get; private init; }
+        public int Age { get; private set; }
 
         public Promo(int age)
             => Age = age;

@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace Demo.Tests
+namespace Test.Nuget.Please.Dont.Use.Tests
 {
     public class CalcTests
     {
