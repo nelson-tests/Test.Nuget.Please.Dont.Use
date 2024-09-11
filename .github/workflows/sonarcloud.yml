@@ -42,9 +42,6 @@ jobs:
       with:
         dotnet-version: ${{ env.SDK_VERSION }}
 
-    - name: "Restore .NET Tools"
-      run: dotnet tool restore
-
     # Hack reasons:
     #   - The last version of the `xunit.runner.visualstudio` doesn't generate the report for some OLD SDK versions like .net 5
     #   - The Stryker versions after 4.0.0 is not compatible with net7.0
@@ -62,6 +59,9 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+    - name: "Restore .NET Tools"
+      run: dotnet tool restore
 
     - name: "Create cache directory"
       run: mkdir -p ~/sonar/cache
