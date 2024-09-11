@@ -78,7 +78,9 @@ jobs:
       run: jq -f tests/mutation-report-to-sonar.jq '${{ github.workspace }}/mutations/reports/mutation-report.json' > '${{ github.workspace }}/mutations/reports/mutation-sonar.json'
 
     - name: "Show report"
-      run: cat $(pwd)/mutations/reports/mutation-sonar.json
+      run: |
+        ls -la ${{ github.workspace }}/mutations/reports
+        cat ${{ github.workspace }}/mutations/reports/mutation-sonar.json
 
     - name: "Comment PR"
       uses: actions/github-script@v7.0.1
