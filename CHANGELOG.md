@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.6.0...v1.7.0) (2024-09-13)
+
+
+### Features
+
+* Added div ([dbc86b0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/dbc86b0a52f5c4d5e79e4f4e9daf6a62413366cb))
+
 # [1.6.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.5.0...v1.6.0) (2023-11-18)
 
 
