@@ -15,5 +15,6 @@
         public int Sum() => Value1 + Value2;
 
         public int Sub() => Value1 - Value2;
+        public double Div() => Value1 / Value2;
     }
 }
