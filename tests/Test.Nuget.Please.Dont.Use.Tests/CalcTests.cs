@@ -35,5 +35,22 @@ namespace Test.Nuget.Please.Dont.Use.Tests
             // Assert
             act.Should().Be(7);
         }
+
+
+
+        [Fact]
+        public void Div_tests()
+        {
+            // Arrange
+            var calc = new Calc(6, 2);
+
+
+            // Act
+            var act = calc.Div();
+
+
+            // Assert
+            act.Should().Be(3);
+        }
     }
 }
