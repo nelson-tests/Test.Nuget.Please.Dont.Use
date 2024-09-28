@@ -17,7 +17,7 @@ jobs:
     - name: "Checkout"
       uses: actions/checkout@v4
 
-    - name: 'Readme analysis'
+    - name: 'Validate links'
       uses: umbrelladocs/action-linkspector@v1
       with:
         fail_on_error: true
