@@ -1,8 +1,14 @@
+useGitIgnore: true
 dirs:
   - ./
 
 files:
+  - CHANGELOG.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
   - README.md
+  - README.nuget.org.md
+  - SECURITY.md
 
 aliveStatusCodes:
 - 200
