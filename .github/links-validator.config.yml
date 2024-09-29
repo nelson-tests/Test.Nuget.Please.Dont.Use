@@ -10,7 +10,6 @@ files:
   - README.md
   - README.nuget.org.md
   - SECURITY.md
-  - PULL_REQUEST_TEMPLATE.md
 
 aliveStatusCodes:
 - 200
