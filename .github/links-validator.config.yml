@@ -1,4 +1,5 @@
 useGitIgnore: true
+
 dirs:
   - ./
 
