@@ -25,7 +25,10 @@ jobs:
     - name: 'Validate links'
       uses: umbrelladocs/action-linkspector@v1
       with:
+        level: 'info'
         fail_on_error: true
         filter_mode: nofilter
-        workdir: ${{ github.workspace }}
-        config_file: '.github/links-validator.config.yml'
+        #workdir: ${{ github.workspace }}
+        workdir: './'
+        config_file: './.github/links-validator.config.yml'
+        reporter: 'links-checker'
