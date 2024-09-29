@@ -22,4 +22,5 @@ jobs:
       with:
         fail_on_error: true
         filter_mode: nofilter
-        config_file: './.github/links-validator.config.yml'
+        workdir: '.github'
+        config_file: 'links-validator.config.yml'
