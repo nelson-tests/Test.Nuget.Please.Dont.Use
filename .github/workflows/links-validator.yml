@@ -31,4 +31,3 @@ jobs:
         #workdir: ${{ github.workspace }}
         workdir: './'
         config_file: './.github/links-validator.config.yml'
-        reporter: 'links-checker'
