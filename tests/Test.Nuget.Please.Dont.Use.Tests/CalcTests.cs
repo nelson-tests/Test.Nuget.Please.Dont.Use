@@ -52,5 +52,22 @@ namespace Test.Nuget.Please.Dont.Use.Tests
             // Assert
             act.Should().Be(3);
         }
+
+
+
+        [Fact]
+        public void Mult_tests()
+        {
+            // Arrange
+            var calc = new Calc(6, 2);
+
+
+            // Act
+            var act = calc.Mult();
+
+
+            // Assert
+            act.Should().Be(12);
+        }
     }
 }
