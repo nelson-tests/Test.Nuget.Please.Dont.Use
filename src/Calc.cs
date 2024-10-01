@@ -16,5 +16,6 @@
 
         public int Sub() => Value1 - Value2;
         public double Div() => Value1 / Value2;
+        public double Mult() => Value1 * Value2;
     }
 }
