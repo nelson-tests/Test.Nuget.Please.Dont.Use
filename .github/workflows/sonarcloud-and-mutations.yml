@@ -45,7 +45,7 @@ jobs:
         else
           echo "STRYKER_BRANCH=${{ github.head_ref }}-${{ github.run_number }}" >> $GITHUB_ENV
         fi
-        echo "Stryker branch is $STRYKER_BRANCH"
+        echo "Stryker branch is ${{ env.STRYKER_BRANCH }}"
 
     - name: "Setup .NET"
       uses: actions/setup-dotnet@v4.0.1
