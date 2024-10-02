@@ -46,7 +46,6 @@ jobs:
         fi
 
     - name: "Display branch name for Stryker"
-      if: github.event_name == 'pull_request'
       run: echo "Stryker branch is '${{ env.STRYKER_BRANCH }}'"
 
     - name: "Setup .NET"
