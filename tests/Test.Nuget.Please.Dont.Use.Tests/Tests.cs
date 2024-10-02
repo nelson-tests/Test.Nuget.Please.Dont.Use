@@ -87,6 +87,7 @@ namespace Test.Nuget.Please.Dont.Use.Tests
         [InlineData(2, 5, 32)]
         [InlineData(3, 3, 27)]
         [InlineData(4, 2, 16)]
+        [InlineData(5, 2, 25)]
         public void Test7(int a, int b, int expected)
         {
             // Arrange && Act
