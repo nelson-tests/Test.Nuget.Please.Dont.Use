@@ -82,5 +82,19 @@ namespace Test.Nuget.Please.Dont.Use.Tests
             // Assert
             act.Should().Be(32);
         }
+
+        [Theory]
+        [InlineData(2, 5, 32)]
+        [InlineData(3, 3, 27)]
+        [InlineData(4, 2, 16)]
+        public void Test7(int a, int b, int expected)
+        {
+            // Arrange && Act
+            var act = MyTestClass.Pow(a, b);
+
+
+            // Assert
+            act.Should().Be(expected);
+        }
     }
 }
