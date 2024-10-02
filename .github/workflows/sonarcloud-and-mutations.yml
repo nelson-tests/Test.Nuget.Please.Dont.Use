@@ -33,7 +33,7 @@ permissions:
 jobs:
 
   sonar-scanner:
-    name: "Sonar scanner and Mutation tests"
+    name: "Sonar Scanner and Mutation Tests"
     runs-on: ubuntu-latest
 
     steps:
