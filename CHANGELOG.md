@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.7.0...v1.8.0) (2024-10-02)
+
+
+### Features
+
+* Add multiplication operation in Calc class ([3e59974](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/3e59974d29ba052a21caeb03a99f881a756e6fc5))
+
 # [1.7.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.6.0...v1.7.0) (2024-09-13)
 
 
