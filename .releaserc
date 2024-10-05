@@ -8,7 +8,14 @@
         { "type": "perf", "release": "patch" }
       ]
     }],
-    "@semantic-release/release-notes-generator",
+    ["@semantic-release/release-notes-generator", {
+      "presetConfig": {
+        "types": [
+          { "type": "refactor", "section": "Refactors" },
+          { "type": "perf", "section": "Performance Improvements" }
+        ]
+      }
+    }],
     ["semantic-release-plugin-csproj", {
         "projectFile": "src/Test.Nuget.Please.Dont.Use.csproj"
     }],
