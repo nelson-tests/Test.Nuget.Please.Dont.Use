@@ -19,5 +19,4 @@ namespace Test.Nuget.Please.Dont.Use
 
         public static double Pow(double a, double b) => Math.Pow(a, b);
     }
-
 }
