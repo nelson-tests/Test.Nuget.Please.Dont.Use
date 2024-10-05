@@ -1,3 +1,23 @@
+## [1.9.1](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.9.0...v1.9.1) (2024-10-05)
+
+# [1.9.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.8.3...v1.9.0) (2024-10-05)
+
+
+### Features
+
+* Added new Sum ([d63ca4d](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/d63ca4da3dcba009b3255517249132cd03ed8de7))
+
+## [1.8.3](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.8.2...v1.8.3) (2024-10-05)
+
+## [1.8.2](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.8.1...v1.8.2) (2024-10-05)
+
+
+### Performance Improvements
+
+* testing two ([7c256bf](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/7c256bf65a27fed0cff7c5cfa688169ea416ab39))
+
+## [1.8.1](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.8.0...v1.8.1) (2024-10-05)
+
 # [1.8.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.7.0...v1.8.0) (2024-10-02)
 
 
