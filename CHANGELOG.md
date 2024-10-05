@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.8.3...v1.9.0) (2024-10-05)
+
+
+### Features
+
+* Added new Sum ([d63ca4d](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/d63ca4da3dcba009b3255517249132cd03ed8de7))
+
 ## [1.8.3](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.8.2...v1.8.3) (2024-10-05)
 
 ## [1.8.2](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.8.1...v1.8.2) (2024-10-05)
