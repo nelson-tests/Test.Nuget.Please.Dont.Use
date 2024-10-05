@@ -12,6 +12,7 @@ namespace Test.Nuget.Please.Dont.Use
         public static int Sum(int a, int b) => a + b;
         public static int Sum(int a, int b, int c) => a + b + c;
         public static int Sum(int a, int b, int c, int d) => a + b + c + d;
+        public static int Sum(int a, int b, int c, int d, int e) => a + b + c + d + e;
 
         public static int Sub(int a, int b) => a - b;
 

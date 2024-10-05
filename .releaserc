@@ -1,5 +1,5 @@
 {
-   "branches": ["main"],
+  "branches": ["main"],
 
   "plugins": [
     ["@semantic-release/commit-analyzer", {
@@ -17,18 +17,17 @@
       }
     }],
     ["semantic-release-plugin-csproj", {
-        "projectFile": "src/Test.Nuget.Please.Dont.Use.csproj"
+      "projectFile": "src/Test.Nuget.Please.Dont.Use.csproj"
     }],
     "@semantic-release/changelog",
     "@semantic-release/github",
-    "@semantic-release/git",
-    {
+    ["@semantic-release/git", {
       "path": "@semantic-release/git",
       "assets": [
         "CHANGELOG.md",
         "src/**.csproj"
-    ],
+      ],
       "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-    }
+    }]
   ]
 }
