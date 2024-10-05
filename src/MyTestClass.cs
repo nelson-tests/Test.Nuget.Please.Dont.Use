@@ -10,7 +10,8 @@ namespace Test.Nuget.Please.Dont.Use
         public static string WeTestMethod(string we) => $"We are {we}.";
 
         public static int Sum(int a, int b) => a + b;
-        public static int Sum(int a, int b, int d) => a + b + d;
+        public static int Sum(int a, int b, int c) => a + b + c;
+        public static int Sum(int a, int b, int c, int d) => a + b + c + d;
 
         public static int Sub(int a, int b) => a - b;
 
