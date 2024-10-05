@@ -1,3 +1,17 @@
+# [1.11.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.10.0...v1.11.0) (2024-10-05)
+
+
+### Features
+
+* new feature 6 ([9a496c5](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/9a496c55e29f77801632ad0df333daa5567d2185))
+
+# [1.10.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.9.1...v1.10.0) (2024-10-05)
+
+
+### Features
+
+* new feature ([596ae5a](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/596ae5a6c7401c58dbb65a212d4baa7b3dab616a))
+
 ## [1.9.1](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.9.0...v1.9.1) (2024-10-05)
 
 # [1.9.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.8.3...v1.9.0) (2024-10-05)
