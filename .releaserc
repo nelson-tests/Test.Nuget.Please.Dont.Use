@@ -11,8 +11,8 @@
     ["@semantic-release/release-notes-generator", {
       "presetConfig": {
         "types": [
-          { "type": "refactor", "section": "Refactors" },
-          { "type": "perf", "section": "Performance Improvements" }
+          { "type": "refactor", "section": "Refactors", "hidden": false },
+          { "type": "perf", "section": "Performance Improvements", "hidden": false }
         ]
       }
     }],
