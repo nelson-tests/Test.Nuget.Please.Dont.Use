@@ -1,3 +1,15 @@
+# [1.12.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.11.2...v1.12.0) (2024-11-18)
+
+
+### Bug Fixes
+
+* Update xunit.runner.visualstudio package references ([e7b8c5f](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/e7b8c5f89e8e62430ea16f78ea4b89d5576fa3e6))
+
+
+### Features
+
+* Added support to .NET9 ([4c2dc1a](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/4c2dc1a5f3132d5c41fb18f45acfb1a593d38445))
+
 ## [1.11.2](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.11.1...v1.11.2) (2024-10-10)
 
 
