@@ -22,6 +22,8 @@ jobs:
 
     - name: "Setup .NET"
       uses: actions/setup-dotnet@v4.1.0
+      with:
+        dotnet-version: 'global.json'
 
     - name: "2 - List installed .NET SDKs"
       run: dotnet --list-sdks
