@@ -32,9 +32,7 @@ jobs:
 
     steps:
     - name: "Configure dependencies"
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y libicu-dev libssl-dev
+      run: sudo apt-get update && sudo apt-get install -y libicu-dev libssl-dev
 
     - name: "Checkout"
       uses: actions/checkout@v4.2.2
