@@ -23,7 +23,7 @@ jobs:
 
   test-project:
     name: "Test nuget"
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       issues: read
@@ -31,12 +31,11 @@ jobs:
       pull-requests: write
 
     steps:
-    - name: "Configure dependencies"
-      run: sudo apt-get update && sudo apt-get install -y libicu-dev libssl-dev icu-devtools
+    # - name: "Configure dependencies"
+    #   run: sudo apt-get update && sudo apt-get install -y libicu-dev libssl-dev icu-devtools
 
-    - name: Update Library Links
-      run: |
-        sudo ldconfig
+    - name: DEBUG
+      run: openssl version
 
     - name: "Checkout"
       uses: actions/checkout@v4.2.2
@@ -59,9 +58,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: "Run tests"
-      run: |
-        export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
-        dotnet test --configuration Release --no-build --verbosity normal --results-directory ${{ env.TEST_RESULTS_DIRECTORY }} --collect:"XPlat Code Coverage"
+      run: dotnet test --configuration Release --no-build --verbosity normal --results-directory ${{ env.TEST_RESULTS_DIRECTORY }} --collect:"XPlat Code Coverage"
 
     - name: "Combine Coverage Reports" # This is because one report is produced per project, and we want one result for all of them.
       uses: danielpalme/ReportGenerator-GitHub-Action@5.4.1
