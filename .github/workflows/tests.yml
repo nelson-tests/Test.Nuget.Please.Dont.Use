@@ -56,7 +56,7 @@ jobs:
 
     - name: "Run tests"
       run: |
-        export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+        export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
         dotnet test --configuration Release --no-build --verbosity normal --results-directory ${{ env.TEST_RESULTS_DIRECTORY }} --collect:"XPlat Code Coverage"
 
     - name: "Combine Coverage Reports" # This is because one report is produced per project, and we want one result for all of them.
