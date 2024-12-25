@@ -39,6 +39,12 @@ jobs:
     - name: DEBUG
       run: openssl version
 
+    - name: Diagnostic info
+      run: |
+        dotnet --info
+        dpkg -l | grep icu
+        dpkg -l | grep ssl
+
     - name: "Checkout"
       uses: actions/checkout@v4.2.2
 
