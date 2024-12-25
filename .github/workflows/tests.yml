@@ -23,7 +23,7 @@ jobs:
 
   test-project:
     name: "Test nuget"
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     permissions:
       contents: read
       issues: read
@@ -31,20 +31,6 @@ jobs:
       pull-requests: write
 
     steps:
-    - name: Instalar dependências necessárias
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y libicu-dev libssl-dev
-
-    - name: DEBUG
-      run: openssl version
-
-    - name: Diagnostic info
-      run: |
-        dotnet --info
-        dpkg -l | grep icu
-        dpkg -l | grep ssl
-
     - name: "Checkout"
       uses: actions/checkout@v4.2.2
 
