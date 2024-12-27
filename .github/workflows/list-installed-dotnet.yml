@@ -21,7 +21,7 @@ jobs:
       run: dotnet --list-runtimes
 
     - name: "Setup .NET"
-      uses: actions/setup-dotnet@v4.1.0
+      uses: actions/setup-dotnet@v4.2.0
       with:
         global-json-file: 'global.json'
 
