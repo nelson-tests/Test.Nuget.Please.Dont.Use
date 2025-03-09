@@ -138,6 +138,18 @@ jobs:
               body: message
             });
 
+    - name: "Add Stryker Report in PR Comment"
+      uses: marocchino/sticky-pull-request-comment@v2
+      if: github.event_name == 'pull_request'
+      with:
+        header: stryker-report
+        hide_and_recreate: true
+        hide_classify: "OUTDATED"
+        message: |
+          🚀 **Testing - Stryker report generated** 🚀
+          [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2F${{ github.repository_owner }}%2F${{ github.event.repository.name }}%2F${{ env.STRYKER_BRANCH }})](https://dashboard.stryker-mutator.io/reports/github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ env.STRYKER_BRANCH }})
+          To more details: https://dashboard.stryker-mutator.io/reports/github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ env.STRYKER_BRANCH }}
+
     - name: "Publish report"
       run: |
         cat $(find ${{ github.workspace }}/mutations/reports/* -name "*.md") > $GITHUB_STEP_SUMMARY
