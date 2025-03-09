@@ -2,7 +2,7 @@ name: 'Demo .NET'
 
 
 on:
-  workflow_dispatch: # To can dispatch manually
+  workflow_dispatch:
 
 jobs:
 
