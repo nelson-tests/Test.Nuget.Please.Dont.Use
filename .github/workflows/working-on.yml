@@ -35,11 +35,28 @@ jobs:
     - name: "Checkout"
       uses: actions/checkout@v4.2.2
 
+    - name: "Cache NuGet packages"
+      uses: actions/cache@v4.2.3
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: ${{ runner.os }}-nuget-
+
     - name: "Debug 1"
-      run: ls -la ~/.nuget
+      run: |
+        if [ -d ~/.nuget ]; then
+          ls -la ~/.nuget
+        else
+          echo "Dir ~/.nuget not found"
+        fi
 
     - name: "Debug 2"
-      run: ls -la ~/.nuget/packages
+      run: |
+        if [ -d ~/.nuget/packages ]; then
+          ls -la ~/.nuget/packages
+        else
+          echo "Dir ~/.nuget/packages not found"
+        fi
 
     - name: "Setup .NET"
       uses: actions/setup-dotnet@v4.3.1
