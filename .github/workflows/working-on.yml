@@ -38,14 +38,26 @@ jobs:
     - name: "Checkout"
       uses: actions/checkout@v4.2.2
 
+    - name: "Debug 01"
+      run: echo "hashFiles - ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}"
+
+    - name: "Debug 02"
+      run: |
+        echo "Search all packages.lock.json..."
+        find . -type f -name "packages.lock.json" -exec ls -la {} \;
+
     - name: "Cache NuGet packages"
       uses: actions/cache@v4.2.3
+      id: cache-nuget
       with:
         path: ~/.nuget/packages
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
         restore-keys: ${{ runner.os }}-nuget-
 
-    - name: "Debug 1"
+    - name: "Debug 10"
+      run: echo "Cache hit - ${{ steps.cache-nuget.outputs.cache-hit }}"
+
+    - name: "Debug 11"
       run: |
         if [ -d ~/.nuget ]; then
           ls -la ~/.nuget
@@ -53,7 +65,7 @@ jobs:
           echo "Dir ~/.nuget not found"
         fi
 
-    - name: "Debug 2"
+    - name: "Debug 12"
       run: |
         if [ -d ~/.nuget/packages ]; then
           ls -la ~/.nuget/packages
