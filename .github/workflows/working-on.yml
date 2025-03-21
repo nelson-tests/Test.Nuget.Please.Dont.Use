@@ -32,6 +32,9 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+    - name: "Debug 0"
+      run: echo "Debugging the workflow 01"
+
     - name: "Checkout"
       uses: actions/checkout@v4.2.2
 
