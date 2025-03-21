@@ -46,6 +46,13 @@ jobs:
         echo "Search all packages.lock.json..."
         find . -type f -name "packages.lock.json" -exec ls -la {} \;
 
+    - name: "Debug 03"
+      run: |
+        echo "Dump all env variables..."
+        echo "----------------------------------------"
+        printenv
+        echo "----------------------------------------"
+
     - name: "Cache NuGet packages"
       uses: actions/cache@v4.2.3
       id: cache-nuget
@@ -85,7 +92,7 @@ jobs:
           ${{ env.SDK_VERSION_3 }}
 
     - name: "Restore dependencies"
-      run: dotnet restore
+      run: dotnet restore --locked-mode
 
     - name: "Build"
       run: dotnet build -c Release --no-restore
