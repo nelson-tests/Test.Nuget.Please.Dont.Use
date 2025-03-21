@@ -33,7 +33,7 @@ jobs:
 
     steps:
     - name: "Debug 0"
-      run: echo "Debugging the workflow 01"
+      run: echo "Debugging the workflow 02"
 
     - name: "Checkout"
       uses: actions/checkout@v4.2.2
