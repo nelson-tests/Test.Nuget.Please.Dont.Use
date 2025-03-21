@@ -99,3 +99,11 @@ jobs:
 
     - name: "Pack"
       run: dotnet pack -c Release --no-build
+
+    - name: "Debug 91"
+      run: echo "hashFiles - ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}"
+
+    - name: "Debug 92"
+      run: |
+        echo "Search all packages.lock.json..."
+        find . -type f -name "packages.lock.json" -exec ls -la {} \;
