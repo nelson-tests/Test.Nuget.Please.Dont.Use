@@ -57,7 +57,7 @@ jobs:
       run: |
         # Sanitize branch name
         SAFE_HEAD_REF="$(printf '%s' "$GH_HEAD_REF" | tr -c 'A-Za-z0-9._-' '-')"
-        if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+        if [[ "$GH_REF" == "refs/heads/main" ]]; then
           echo "STRYKER_BRANCH=main" >> $GITHUB_ENV
         else
           printf 'STRYKER_BRANCH=%s-%s\n' "$SAFE_HEAD_REF" "$GH_RUN_NUMBER" >> "$GITHUB_ENV"
