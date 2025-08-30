@@ -134,8 +134,7 @@ jobs:
           To more details: https://dashboard.stryker-mutator.io/reports/github.com/${{ github.repository_owner }}/${{ github.event.repository.name }}/${{ env.STRYKER_BRANCH }}
 
     - name: "Publish report"
-      run: |
-        cat $(find ${{ github.workspace }}/mutations/reports/* -name "*.md") > $GITHUB_STEP_SUMMARY
+      run: cat $(find ${{ github.workspace }}/mutations/reports/* -name "*.md") > $GITHUB_STEP_SUMMARY
 
     - name: "Build and analyze"
       env:
