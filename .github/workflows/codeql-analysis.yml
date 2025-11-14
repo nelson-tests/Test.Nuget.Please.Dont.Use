@@ -77,7 +77,7 @@ jobs:
 
     # Manual build to ensure proper SDK detection for .NET 10
     - name: Build solution
-      run: dotnet restore && dotnet build --no-restore
+      run: dotnet build --no-incremental
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
