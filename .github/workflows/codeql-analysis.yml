@@ -20,6 +20,16 @@ on:
   schedule:
     - cron: '0 5 * * 0'
 
+
+env:
+  SDK_VERSION_9: '9.0.307'
+  SDK_VERSION_8: '8.0.416'
+  SDK_VERSION_7: '7.0.410'
+  SDK_VERSION_6: '6.0.428'
+  SDK_VERSION_5: '5.0.408'
+  SDK_VERSION_3: '3.1.426'
+
+
 jobs:
   analyze:
     name: 'CodeQL Analyze'
@@ -39,6 +49,18 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v5.0.0
+
+    - name: "Setup .NET"
+      uses: actions/setup-dotnet@v5.0.0
+      with:
+        global-json-file: 'global.json'
+        dotnet-version: |
+          ${{ env.SDK_VERSION_9 }}
+          ${{ env.SDK_VERSION_8 }}
+          ${{ env.SDK_VERSION_7 }}
+          ${{ env.SDK_VERSION_6 }}
+          ${{ env.SDK_VERSION_5 }}
+          ${{ env.SDK_VERSION_3 }}
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
