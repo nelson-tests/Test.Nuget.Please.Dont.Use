@@ -75,12 +75,9 @@ jobs:
         # queries: security-extended,security-and-quality
 
 
-    # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # Manual build to ensure proper SDK detection for .NET 10
     - name: Build solution
-      run: |
-        dotnet restore
-        dotnet build --no-restore
+      run: dotnet restore && dotnet build --no-restore
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
