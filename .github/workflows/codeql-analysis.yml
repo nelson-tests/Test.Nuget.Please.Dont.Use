@@ -76,12 +76,11 @@ jobs:
 
 
     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
-    # Replaced autobuild with manual build steps to ensure proper SDK detection
-    - name: Restore dependencies
-      run: dotnet restore
-
-    - name: Build
-      run: dotnet build --no-restore
+    # Manual build to ensure proper SDK detection for .NET 10
+    - name: Build solution
+      run: |
+        dotnet restore
+        dotnet build --no-restore
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
