@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: "Checkout"
-      uses: actions/checkout@v5.0.0
+      uses: actions/checkout@v5.0.1
 
     - name: "1 - List installed .NET SDKs"
       run: dotnet --list-sdks
