@@ -76,7 +76,7 @@ jobs:
     #   - The Stryker versions after 4.0.0 is not compatible with net7.0
     - name: "Replace TargetFrameworks"
       run: |
-        find . -type f -name "*.csproj" -exec sed -i 's/<TargetFrameworks>.*<\/TargetFrameworks>/<TargetFrameworks>${{ env.FRAMEWORK_VERSION }}<\/TargetFrameworks>/g' {} +
+        find . -type f -name "*.csproj" -exec sed -i 's/<TargetFrameworks>.*<\/TargetFrameworks>/<TargetFramework>${{ env.FRAMEWORK_VERSION }}<\/TargetFramework>/g' {} +
 
     - name: "Set up JDK"
       uses: actions/setup-java@v5.0.0
