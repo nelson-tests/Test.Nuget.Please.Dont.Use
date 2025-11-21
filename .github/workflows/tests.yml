@@ -39,7 +39,7 @@ jobs:
 
     steps:
     - name: "Checkout"
-      uses: actions/checkout@v5.0.0
+      uses: actions/checkout@v6.0.0
 
     - name: "Setup .NET"
       uses: actions/setup-dotnet@v5.0.0
@@ -122,5 +122,4 @@ jobs:
       if: always()
       with:
         check_name: "Test Summary"
-        # NOTE: using trx_files instead of files due to https://github.com/EnricoMi/publish-unit-test-result-action/issues/424
-        trx_files: "${{ github.workspace }}/${{ env.COVERAGE_REPORT_DIRECTORY }}/**/*.trx"
+        files: "${{ github.workspace }}/${{ env.COVERAGE_REPORT_DIRECTORY }}/**/*.trx"
