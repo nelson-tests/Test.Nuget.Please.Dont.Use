@@ -20,6 +20,16 @@ on:
   schedule:
     - cron: '0 5 * * 0'
 
+
+env:
+  SDK_VERSION_9: '9.0.307'
+  SDK_VERSION_8: '8.0.416'
+  SDK_VERSION_7: '7.0.410'
+  SDK_VERSION_6: '6.0.428'
+  SDK_VERSION_5: '5.0.408'
+  SDK_VERSION_3: '3.1.426'
+
+
 jobs:
   analyze:
     name: 'CodeQL Analyze'
@@ -40,6 +50,18 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v6.0.1
 
+    - name: "Setup .NET"
+      uses: actions/setup-dotnet@v5.0.0
+      with:
+        global-json-file: 'global.json'
+        dotnet-version: |
+          ${{ env.SDK_VERSION_9 }}
+          ${{ env.SDK_VERSION_8 }}
+          ${{ env.SDK_VERSION_7 }}
+          ${{ env.SDK_VERSION_6 }}
+          ${{ env.SDK_VERSION_5 }}
+          ${{ env.SDK_VERSION_3 }}
+
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v4
@@ -53,20 +75,9 @@ jobs:
         # queries: security-extended,security-and-quality
 
 
-    # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
-    # If this step fails, then you should remove it and run the build manually (see below)
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v4
-
-    # ℹ️ Command-line programs to run using the OS shell.
-    # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
-
-    #   If the Autobuild fails above, remove it and uncomment the following three lines.
-    #   modify them (or add more) to build your code if your project, please refer to the EXAMPLE below for guidance.
-
-    # - run: |
-    #   echo "Run, Build Application using script"
-    #   ./location_of_script_within_repo/buildscript.sh
+    # Manual build to ensure proper SDK detection for .NET 10
+    - name: Build solution
+      run: dotnet build --no-incremental
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v4
