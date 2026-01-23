@@ -17,7 +17,13 @@ jobs:
     steps:
     - name: 'Get tag'
       id: tag
-      uses: dawidd6/action-get-tag@v1.1.0
+      run: |
+        if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+          TAG="${GITHUB_REF#refs/tags/}"
+        else
+          TAG="None"
+        fi
+        echo "tag=$TAG" >> $GITHUB_OUTPUT
 
     - name: 'Print workflow environment variables'
       run: |
