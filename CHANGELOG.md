@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.12.1...v1.12.2) (2026-01-23)
+
+
+### Bug Fixes
+
+*  Welcome ([4b98481](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/4b98481a1a5863079b16b69e06a316442670f14f))
+
 ## [1.12.1](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.12.0...v1.12.1) (2025-01-25)
 
 
