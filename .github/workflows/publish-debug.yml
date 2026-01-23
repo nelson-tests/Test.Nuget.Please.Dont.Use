@@ -1,0 +1,25 @@
+name: 'Publish - Debug'
+
+
+on:
+  workflow_dispatch:
+
+  release:
+    types: [created]
+
+
+jobs:
+
+  deploy-nuget:
+    name: "Deploy nuget"
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - name: 'Get tag'
+      id: tag
+      uses: dawidd6/action-get-tag@v1.1.0
+
+    - name: 'Print workflow environment variables'
+      run: |
+        echo 'Version: ${{ steps.tag.outputs.tag }}'
+        echo 'workspace: ${{ github.workspace }}'
