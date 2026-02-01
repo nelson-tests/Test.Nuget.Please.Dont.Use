@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.12.3...v1.13.0) (2026-02-01)
+
+
+### Features
+
+* add support for .NET 10.0 ([3181c3a](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/3181c3a08c56b17bcb1ec947fc1020b32d33d7a0))
+
 ## [1.12.3](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.12.2...v1.12.3) (2026-01-23)
 
 
