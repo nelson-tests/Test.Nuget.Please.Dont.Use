@@ -1,3 +1,24 @@
+# [1.13.0](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.12.3...v1.13.0) (2026-02-01)
+
+
+### Features
+
+* add support for .NET 10.0 ([3181c3a](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/3181c3a08c56b17bcb1ec947fc1020b32d33d7a0))
+
+## [1.12.3](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.12.2...v1.12.3) (2026-01-23)
+
+
+### Bug Fixes
+
+* welcome ([ca21bcd](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/ca21bcd9d34ac1f005be85e0744136c3da02b0b0))
+
+## [1.12.2](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.12.1...v1.12.2) (2026-01-23)
+
+
+### Bug Fixes
+
+*  Welcome ([4b98481](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/commit/4b98481a1a5863079b16b69e06a316442670f14f))
+
 ## [1.12.1](https://github.com/nelson-tests/Test.Nuget.Please.Dont.Use/compare/v1.12.0...v1.12.1) (2025-01-25)
 
 

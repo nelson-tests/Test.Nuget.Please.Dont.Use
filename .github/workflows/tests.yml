@@ -11,7 +11,8 @@ on:
 
 
 env:
-  SDK_VERSION_8: '8.0.404'
+  SDK_VERSION_9: '9.0.310'
+  SDK_VERSION_8: '8.0.417'
   SDK_VERSION_7: '7.0.410'
   SDK_VERSION_6: '6.0.428'
   SDK_VERSION_5: '5.0.408'
@@ -39,13 +40,14 @@ jobs:
 
     steps:
     - name: "Checkout"
-      uses: actions/checkout@v6.0.1
+      uses: actions/checkout@v6.0.2
 
     - name: "Setup .NET"
-      uses: actions/setup-dotnet@v5.0.1
+      uses: actions/setup-dotnet@v5.1.0
       with:
         global-json-file: 'global.json'
         dotnet-version: |
+          ${{ env.SDK_VERSION_9 }}
           ${{ env.SDK_VERSION_8 }}
           ${{ env.SDK_VERSION_7 }}
           ${{ env.SDK_VERSION_6 }}
@@ -74,7 +76,7 @@ jobs:
         toolpath: "reportgeneratortool" # Default directory for installing the dotnet tool.
 
     - name: "Upload Combined Coverage"
-      uses: actions/upload-artifact@v5.0.0
+      uses: actions/upload-artifact@v6.0.0
       with:
         name: 'Coverage'
         path: ${{ github.workspace }}/Cobertura.xml
@@ -103,7 +105,7 @@ jobs:
         path: code-coverage-results.md
 
     - name: "Upload Test Results"
-      uses: actions/upload-artifact@v5.0.0
+      uses: actions/upload-artifact@v6.0.0
       with:
         name: 'TestResults'
         path: ${{ github.workspace }}/${{ env.COVERAGE_REPORT_DIRECTORY }}/**/*
@@ -118,7 +120,7 @@ jobs:
         reporter: dotnet-trx
 
     - name: "Publish Test Summary"
-      uses: EnricoMi/publish-unit-test-result-action@v2.21.0
+      uses: EnricoMi/publish-unit-test-result-action@v2.22.0
       if: always()
       with:
         check_name: "Test Summary"
