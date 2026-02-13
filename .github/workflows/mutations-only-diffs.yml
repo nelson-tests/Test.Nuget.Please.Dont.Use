@@ -98,7 +98,7 @@ jobs:
       run: cat $(find ${{ github.workspace }}/mutations/reports/* -name "*.md") > $GITHUB_STEP_SUMMARY
 
     - name: "Upload Html report as artifact"
-      uses: actions/upload-artifact@v3.1.2
+      uses: actions/upload-artifact@v6.0.0
       with:
         name: mutation-tests-report
         path: ${{ github.workspace }}/mutations/reports/**/*.html
