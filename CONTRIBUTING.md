@@ -75,7 +75,7 @@ feat(blog): add comment section
 - `test:` Adding missing tests or correcting existing tests;
 - `ci:` Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs);
 - `chore:` Other changes that don't modify src or test files;
-- `merge:` Merge a branch into other branch;
+- `merge:` Merge a branch into another branch;
 - `revert:` Reverts a previous commit;
 
 
