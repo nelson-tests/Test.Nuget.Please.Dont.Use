@@ -89,7 +89,7 @@ feat(blog): add comment section
 
 
 ## <a name="tests"></a>Tests
-* :heavy_check_mark: **DO** add a unit test if your Pull Requests resolves an issue or adds features;
+* :heavy_check_mark: **DO** add a unit test if your Pull Request resolves an issue or adds features;
 * :heavy_check_mark: **CONSIDER** using test patterns like "AAA" and "Given When Then";
 * :heavy_check_mark: **DO** add a test class for each feature and a test method for each assertion;
 * :heavy_check_mark: **DO** make sure unit tests pass;
