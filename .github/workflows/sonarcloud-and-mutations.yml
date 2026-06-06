@@ -45,7 +45,7 @@ jobs:
 
     steps:
     - name: "Checkout"
-      uses: actions/checkout@v6.0.2
+      uses: actions/checkout@v6.0.3
       with:
         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
@@ -67,7 +67,7 @@ jobs:
       run: echo "Stryker branch is '${{ env.STRYKER_BRANCH }}'"
 
     - name: "Setup .NET"
-      uses: actions/setup-dotnet@v5.2.0
+      uses: actions/setup-dotnet@v5.3.0
       with:
         global-json-file: 'global.json'
 
@@ -132,7 +132,7 @@ jobs:
       run: jq -f tests/mutation-report-to-sonar.jq '${{ github.workspace }}/mutations/reports/mutation-report.json' > '${{ github.workspace }}/mutations/reports/mutation-sonar.json'
 
     - name: "Add Stryker Report in PR Comment"
-      uses: marocchino/sticky-pull-request-comment@70d2764d1a7d5d9560b100cbea0077fc8f633987
+      uses: marocchino/sticky-pull-request-comment@0ea0beb66eb9baf113663a64ec522f60e49231c0
       if: github.event_name == 'pull_request'
       with:
         header: stryker-report

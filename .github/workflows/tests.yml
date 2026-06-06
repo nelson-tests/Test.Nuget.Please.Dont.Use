@@ -40,10 +40,10 @@ jobs:
 
     steps:
     - name: "Checkout"
-      uses: actions/checkout@v6.0.2
+      uses: actions/checkout@v6.0.3
 
     - name: "Setup .NET"
-      uses: actions/setup-dotnet@v5.2.0
+      uses: actions/setup-dotnet@v5.3.0
       with:
         global-json-file: 'global.json'
         dotnet-version: |
@@ -64,7 +64,7 @@ jobs:
       run: dotnet test --configuration Release --no-build --verbosity normal --results-directory ${{ github.workspace }}/${{ env.COVERAGE_REPORT_DIRECTORY }} --collect:"XPlat Code Coverage"
 
     - name: "Combine Coverage Reports" # This is because one report is produced per project, and we want one result for all of them.
-      uses: danielpalme/ReportGenerator-GitHub-Action@cf6fe1b38ed5becc89ffe056c1f240825993be5b
+      uses: danielpalme/ReportGenerator-GitHub-Action@049f7ec958c672fd31d5cc1cb01622dc8d2e23ab
       with:
         reports: "**/*.cobertura.xml" # REQUIRED # The coverage reports that should be parsed (separated by semicolon). Globbing is supported.
         targetdir: "${{ github.workspace }}" # REQUIRED # The directory where the generated report should be saved.
@@ -96,7 +96,7 @@ jobs:
         thresholds: "10 30"
 
     - name: "Add Coverage in PR Comment"
-      uses: marocchino/sticky-pull-request-comment@70d2764d1a7d5d9560b100cbea0077fc8f633987
+      uses: marocchino/sticky-pull-request-comment@0ea0beb66eb9baf113663a64ec522f60e49231c0
       if: github.event_name == 'pull_request'
       with:
         header: coverage-report
@@ -112,7 +112,7 @@ jobs:
         if-no-files-found: error
 
     - name: "Publish Test Results"
-      uses: dorny/test-reporter@v2
+      uses: dorny/test-reporter@v3
       if: always()
       with:
         name: "Test Results"
