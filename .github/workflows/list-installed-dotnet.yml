@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: "Checkout"
-      uses: actions/checkout@v6.0.2
+      uses: actions/checkout@v6.0.3
 
     - name: "1 - List installed .NET SDKs"
       run: dotnet --list-sdks
@@ -21,7 +21,7 @@ jobs:
       run: dotnet --list-runtimes
 
     - name: "Setup .NET"
-      uses: actions/setup-dotnet@v5.2.0
+      uses: actions/setup-dotnet@v5.3.0
       with:
         global-json-file: 'global.json'
 
