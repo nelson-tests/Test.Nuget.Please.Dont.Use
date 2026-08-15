@@ -43,6 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      checks: write
       pull-requests: write # To can create a comment with the results
 
     steps:
@@ -83,7 +84,7 @@ jobs:
     - name: "Set up JDK"
       uses: actions/setup-java@v5.4.0
       with:
-        distribution: 'adopt'
+        distribution: 'temurin'
         java-version: '17'
 
     - name: "Restore .NET Tools"
