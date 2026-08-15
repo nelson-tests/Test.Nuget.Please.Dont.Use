@@ -1,0 +1,104 @@
+name: 'Mutation Tests - Diffs Only'
+
+
+on:
+  workflow_dispatch:
+
+  push: # First pipeline to run when deploy a new version
+    branches:
+      - main
+    paths:
+      - "src/**" # Only run when exists changes in source code
+      - "tests/**" # Only run when exists changes in tests code
+
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+    branches:
+      - main
+
+
+env:
+  FRAMEWORK_VERSION: 'net10.0'
+
+  PROJECT_FILE: 'Test.Nuget.Please.Dont.Use.csproj'
+  TEST_PROJECT_PATH: 'tests/Test.Nuget.Please.Dont.Use.Tests/Test.Nuget.Please.Dont.Use.Tests.csproj'
+
+  # Set up the .NET environment to improve test performance and reliability
+  DOTNET_CLI_TELEMETRY_OPTOUT: true # Disable .NET CLI telemetry
+  DOTNET_NOLOGO: true # Disable .NET CLI logo
+  DOTNET_SYSTEM_CONSOLE_ALLOW_ANSI_COLOR_REDIRECTION: true # Enable ANSI color redirection
+  TERM: xterm # Enable ANSI color redirection
+  NUGET_XMLDOC_MODE: skip # Disable NuGet XML documentation generation
+
+
+permissions:
+  pull-requests: write # To can create a comment with the results
+
+
+jobs:
+
+  mutation-tests:
+    name: "Mutation Tests"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: "Checkout"
+      uses: actions/checkout@v6.0.2
+      with:
+        fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+    - name: "Define branch name for Stryker"
+      env:
+        GH_REF: ${{ github.ref }}
+        GH_HEAD_REF: ${{ github.head_ref }}
+        GH_RUN_NUMBER: ${{ github.run_number }}
+      run: |
+        # Sanitize branch name
+        SAFE_HEAD_REF="$(printf '%s' "$GH_HEAD_REF" | tr -c 'A-Za-z0-9._-' '-')"
+        if [[ "$GH_REF" == "refs/heads/main" ]]; then
+          echo "STRYKER_BRANCH=main" >> $GITHUB_ENV
+        else
+          printf 'STRYKER_BRANCH=%s-%s\n' "$SAFE_HEAD_REF" "$GH_RUN_NUMBER" >> "$GITHUB_ENV"
+        fi
+
+    - name: "Display branch name for Stryker"
+      run: echo "Stryker branch is '${{ env.STRYKER_BRANCH }}'"
+
+    - name: "Setup .NET"
+      uses: actions/setup-dotnet@v5.1.0
+      with:
+        global-json-file: 'global.json'
+
+    # Hack reasons:
+    #   - The last version of the `xunit.runner.visualstudio` doesn't generate the report for some OLD SDK versions like .net 5
+    #   - The Stryker versions after 4.0.0 is not compatible with net7.0
+    - name: "Replace TargetFrameworks"
+      run: |
+        find . -type f -name "*.csproj" -exec sed -i 's/<TargetFrameworks>.*<\/TargetFrameworks>/<TargetFrameworks>${{ env.FRAMEWORK_VERSION }}<\/TargetFrameworks>/g' {} +
+
+    - name: "Restore .NET Tools"
+      run: dotnet tool restore
+
+    - name: "Run Stryker"
+      env:
+        STRYKER_API_KEY: ${{ secrets.STRYKER_API_KEY }}
+      run: |
+        dotnet stryker \
+          -tp ${{ env.TEST_PROJECT_PATH }} \
+          -p ${{ env.PROJECT_FILE }} \
+          --reporter json \
+          --reporter markdown \
+          --reporter progress \
+          --reporter html \
+          --version ${{ env.STRYKER_BRANCH }} \
+          --since:main \
+          -O ${{ github.workspace }}/mutations
+
+    - name: "Publish report"
+      run: cat $(find ${{ github.workspace }}/mutations/reports/* -name "*.md") > $GITHUB_STEP_SUMMARY
+
+    - name: "Upload Html report as artifact"
+      uses: actions/upload-artifact@v6.0.0
+      with:
+        name: mutation-tests-report
+        path: ${{ github.workspace }}/mutations/reports/**/*.html
