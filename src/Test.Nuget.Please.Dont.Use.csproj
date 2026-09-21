@@ -12,7 +12,7 @@
     <AssemblyName>Test.Nuget.Please.Dont.Use</AssemblyName>
     <RootNamespace>Test.Nuget.Please.Dont.Use</RootNamespace>
 
-    <Version>1.13.0</Version>
+    <Version>1.13.1</Version>
 
     <PackageOutputPath>bin\</PackageOutputPath>
   </PropertyGroup>
@@ -82,7 +82,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.401">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

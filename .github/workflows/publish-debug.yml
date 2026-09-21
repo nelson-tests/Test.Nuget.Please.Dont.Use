@@ -8,6 +8,9 @@ on:
     types: [created]
 
 
+permissions: {}
+
+
 jobs:
 
   deploy-nuget:
