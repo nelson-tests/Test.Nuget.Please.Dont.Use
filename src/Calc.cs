@@ -1,4 +1,6 @@
-﻿namespace Test.Nuget.Please.Dont.Use
+﻿using System;
+
+namespace Test.Nuget.Please.Dont.Use
 {
     public class Calc
     {
@@ -13,11 +15,11 @@
         }
 
         public int Sum() => Value1 + Value2;
+        public int Mod() => Value1 % Value2;
 
         public int Sub() => Value1 - Value2;
         public double Div() => Value1 / Value2;
         public double Mult() => Value1 * Value2;
+        public double Pow() => Math.Pow(Value1, Value2);
     }
-
-    
 }
