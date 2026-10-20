@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/Test.Nuget.Please.Dont.Use.csproj" />
+  <Project Path="tests/Test.Nuget.Please.Dont.Use.Tests/Test.Nuget.Please.Dont.Use.Tests.csproj" />
+</Solution>

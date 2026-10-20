@@ -1,5 +1,5 @@
 ﻿using System;
-using FluentAssertions;
+using AwesomeAssertions;
 using Xunit;
 
 namespace Test.Nuget.Please.Dont.Use.Tests
@@ -21,7 +21,7 @@ namespace Test.Nuget.Please.Dont.Use.Tests
         public void Test2()
         {
             // Arrange && Act
-            var act = MyTestClass.Sum(2,5);
+            var act = MyTestClass.Sum(2, 5);
 
 
             // Assert
@@ -65,7 +65,7 @@ namespace Test.Nuget.Please.Dont.Use.Tests
         public void Test3()
         {
             // Arrange && Act
-            var act = MyTestClass.Sub(2,5);
+            var act = MyTestClass.Sub(2, 5);
 
 
             // Assert
@@ -76,7 +76,7 @@ namespace Test.Nuget.Please.Dont.Use.Tests
         public void Test4()
         {
             // Arrange && Act
-            var act = MyTestClass.Mult(2,5);
+            var act = MyTestClass.Mult(2, 5);
 
 
             // Assert
@@ -87,7 +87,7 @@ namespace Test.Nuget.Please.Dont.Use.Tests
         public void Test5()
         {
             // Arrange && Act
-            var act = MyTestClass.Div(10,5);
+            var act = MyTestClass.Div(10, 5);
 
 
             // Assert
@@ -98,7 +98,7 @@ namespace Test.Nuget.Please.Dont.Use.Tests
         public void Test6()
         {
             // Arrange && Act
-            var act = MyTestClass.Pow(2,5);
+            var act = MyTestClass.Pow(2, 5);
 
 
             // Assert

@@ -1,0 +1,34 @@
+name: 'Publish - Debug'
+
+
+on:
+  workflow_dispatch:
+
+  release:
+    types: [created]
+
+
+permissions: {}
+
+
+jobs:
+
+  deploy-nuget:
+    name: "Deploy nuget"
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - name: 'Get tag'
+      id: tag
+      run: |
+        if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+          TAG="${GITHUB_REF#refs/tags/}"
+        else
+          TAG="None"
+        fi
+        echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+    - name: 'Print workflow environment variables'
+      run: |
+        echo 'Version: ${{ steps.tag.outputs.tag }}'
+        echo 'workspace: ${{ github.workspace }}'
